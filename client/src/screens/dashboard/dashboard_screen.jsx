@@ -29,10 +29,10 @@ const DashboardScreen = () => {
 
   return (
     <Grid container>
-      <Grid xs={12}>
+      <Grid item xs={12}>
         <NavBar currentRoute={currentRoute} setCurrentRoute={setCurrentRoute} />
       </Grid>
-      <Grid xs={12}>
+      <Grid item xs={12}>
         <Routes>
           <Route path="/" element={<HomeScreen />} />
           <Route path={homeRoute} element={<HomeScreen />} />

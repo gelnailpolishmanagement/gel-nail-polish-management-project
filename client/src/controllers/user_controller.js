@@ -1,6 +1,7 @@
 import axios from "axios";
+import { apiUrl } from "../constants/api";
 
-var userBaseUrl = "https://friendly-waistcoat-bull.cyclic.app/api/v1/user";
+var userBaseUrl = apiUrl + "/api/v1/user";
 
 export const getUserInfo = async (token) => {
   try {

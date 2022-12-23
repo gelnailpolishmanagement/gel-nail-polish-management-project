@@ -25,7 +25,7 @@ const HomeScreen = () => {
     };
 
     getTodayAppointments();
-  }, []);
+  }, [token]);
 
   if (!user) return <></>;
   return (
@@ -52,7 +52,6 @@ const HomeScreen = () => {
           item
           container
           xs={12}
-          lg={5.9}
           style={{
             padding: 20,
             borderRadius: 12,
@@ -60,13 +59,13 @@ const HomeScreen = () => {
         >
           <Grid item xs={12}>
             <Typography
-              variant="h1"
+              variant="h3"
               color={secondaryColor}
               style={{ fontWeight: "bold" }}
             >{`Welcome back, ${user.firstName} ${user.lastName}`}</Typography>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="h3" style={{ color: "white", fontWeight: "bold" }}>
+            <Typography variant="h5" style={{ color: "white", fontWeight: "bold" }}>
               Here you can manage your appointment diary.
               <br />
               You can add appointments to the calendar and update them.
@@ -81,29 +80,24 @@ const HomeScreen = () => {
                 navigate(myCalendarRoute);
               }}
               variant="contained"
-              style={{ color: secondaryColor, fontSize: 16, fontWeight: "bold", backgroundColor: "white" }}
+              style={{
+                color: secondaryColor,
+                fontSize: 16,
+                fontWeight: "bold",
+                backgroundColor: "white",
+              }}
             >
               Start Work
             </Button>
           </Grid>
         </Grid>
-        <Grid
-          item
-          xs={12}
-          lg={5.9}
-          style={{
-            padding: 20,
-            borderRadius: 12,
-          }}
-        >
-          <Grid item xs={12}>
-            <Typography variant="h2" style={{ color: "white", fontWeight: "bold" }}>
-              Today Appointments
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <AppointmentList appointments={todayAppointments} showButtons={false} />
-          </Grid>
+        <Grid item xs={12}>
+          <Typography variant="h5" style={{ color: "white", fontWeight: "bold" }}>
+            Today Appointments
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <AppointmentList appointments={todayAppointments} showButtons={false} />
         </Grid>
       </Grid>
     </div>

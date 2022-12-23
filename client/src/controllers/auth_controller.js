@@ -1,6 +1,7 @@
 import axios from "axios";
+import { apiUrl } from "../constants/api";
 
-var authBaseUrl = "https://friendly-waistcoat-bull.cyclic.app/api/v1/auth";
+var authBaseUrl = apiUrl + "/api/v1/auth";
 
 export const signIn = async (email, password) => {
   try {
